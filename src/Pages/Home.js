@@ -10,7 +10,6 @@ export const HomePage = () => {
     handleLogIn,
     handleLogOut,
     getAccessToken,
-    account,
   } = useAuth();
 
   const handleGetAccessTokenApi = async () => {
