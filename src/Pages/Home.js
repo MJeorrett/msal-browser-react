@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../auth';
 import { appConfig } from '../appConfig';
 
@@ -22,18 +23,17 @@ export const HomePage = () => {
       <h1>Welcome to a Demo of @azure/msal-browser in React.</h1>
       {isAuthenticated ?
         (
-          <button onClick={handleLogOut}>Log Out</button>
+          <>
+            <button onClick={handleLogOut}>Log Out</button><br />
+            <Link to="/account">View Account</Link>
+          </>
         ) :
         (
           <button onClick={handleLogIn}>Log In</button>
         )
       }
-      <h2>Is Authenticated</h2>
-      <p>{isAuthenticated ? 'Yes' : 'No'}</p>
       {isAuthenticated && (
         <>
-          <h2>Account</h2>
-          <pre>{JSON.stringify(account, null, 2)}</pre>
           <h2>Get Access Token Api</h2>
           <button onClick={handleGetAccessTokenApi}>Get Access Token</button>
           <pre>{accessTokenApi}</pre>

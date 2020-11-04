@@ -7,11 +7,11 @@ export const Routes = () => {
   return (
     <Wrapper>
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <Pages.HomePage />
         </Route>
-        <Route path="/user">
-          <Pages.UserPage />
+        <Route path="/account">
+          <Pages.AccountPage />
         </Route>
       </Switch>
     </Wrapper>
